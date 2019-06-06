@@ -7,10 +7,10 @@ offset = 0
 client = MongoClient()
 db = client['toutiao']
 collection = db['toutiao']
+timestamp = int(time.time() * 1000)
 
 def get_url(keyword, offset):
     basic_url = "https://www.toutiao.com/api/search/content/?"
-    timestamp = int(time.time() * 1000)
     params = {
         "aid": "24",
         "app_name": "web_search",
